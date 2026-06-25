@@ -521,9 +521,27 @@
   transition: all var(--transition);
 }
 
-.quiz-option:hover:not(:disabled) {
-  border-color: var(--color-accent-blue);
-  background: var(--color-bg);
+@media (hover: hover) and (pointer: fine) {
+  .quiz-option:hover:not(:disabled) {
+    border-color: var(--color-accent-blue);
+    background: var(--color-bg);
+  }
+}
+
+@media (hover: none) {
+  .quiz-option:hover:not(:disabled) {
+    border-color: var(--color-border);
+    background: var(--color-surface);
+  }
+
+  .quiz-option:active:not(:disabled) {
+    border-color: var(--color-accent-blue);
+    background: var(--color-bg);
+  }
+}
+
+.quiz-option:focus {
+  outline: none;
 }
 
 .quiz-option.correct {
