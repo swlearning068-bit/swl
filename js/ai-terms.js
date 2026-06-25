@@ -2,6 +2,8 @@
  * AI 詞彙生成與解析
  */
 
+const AI_FILL_MAX_RETRIES = 3;
+
 /**
  * 從 AI 回覆中提取 JSON 陣列
  * @param {string} text
@@ -48,11 +50,15 @@ function parseTermsFromAiResponse(text) {
  * 建立批量生詞 prompt 的 user message
  * @param {Object} opts
  */
-function buildGenerateTermsMessage({ topic, count, category, difficulty }) {
+function buildGenerateTermsMessage({ topic, count, category, difficulty, excludeTerms = [] }) {
   let msg = `請生成 ${count} 個社工專業英文詞彙，主題：${topic}`;
   if (category) msg += `，類別：${category}`;
   if (difficulty) msg += `，難度：${difficulty}`;
   msg += '。請用「主題延伸」方式出題：圍繞此主題提供相關學術與實務術語，不要只重複主題名稱本身。';
+  if (excludeTerms.length > 0) {
+    const limited = excludeTerms.slice(0, 60);
+    msg += `請避免重複以下英文術語：${limited.join(', ')}。`;
+  }
   return msg;
 }
 
@@ -62,14 +68,14 @@ function buildGenerateTermsMessage({ topic, count, category, difficulty }) {
  * @returns {Promise<Array>}
  */
 async function generateTermsViaAi(opts) {
-  const { topic, count = 5, category = '', difficulty = '' } = opts;
+  const { topic, count = 5, category = '', difficulty = '', excludeTerms = [] } = opts;
 
   if (!topic || !topic.trim()) {
     throw new Error('請輸入主題');
   }
 
   const systemPrompt = getGenerateTermsPrompt(count, category, difficulty);
-  const userMessage = buildGenerateTermsMessage({ topic, count, category, difficulty });
+  const userMessage = buildGenerateTermsMessage({ topic, count, category, difficulty, excludeTerms });
 
   const response = await fetchDeepSeekComplete(systemPrompt, userMessage, 2000);
   const rawTerms = parseTermsFromAiResponse(response);
@@ -87,14 +93,39 @@ async function generateTermsViaAi(opts) {
  * @returns {Promise<{ added: Array, skipped: number }>}
  */
 async function generateAndSaveTerms(opts) {
-  const rawTerms = await generateTermsViaAi(opts);
-  const result = addCustomTerms(rawTerms);
+  const targetCount = Math.max(1, Number(opts?.count) || 5);
+  const added = [];
+  let skipped = 0;
+  const allTerms = typeof getMergedTerms === 'function' ? getMergedTerms() : getCustomTerms();
+  const seenEn = new Set(allTerms.map(t => String(t.term_en || '').toLowerCase()));
 
-  if (result.added.length === 0) {
+  for (let attempt = 0; attempt < AI_FILL_MAX_RETRIES && added.length < targetCount; attempt++) {
+    const remaining = targetCount - added.length;
+    const rawTerms = await generateTermsViaAi({
+      ...opts,
+      count: remaining,
+      excludeTerms: Array.from(seenEn)
+    });
+    const result = addCustomTerms(rawTerms);
+
+    skipped += result.skipped;
+    added.push(...result.added);
+
+    for (const t of rawTerms) {
+      if (t && t.term_en) seenEn.add(String(t.term_en).toLowerCase());
+    }
+    for (const t of result.added) {
+      if (t && t.term_en) seenEn.add(String(t.term_en).toLowerCase());
+    }
+
+    // 連續補齊失敗時，進入下一輪重試（最多 AI_FILL_MAX_RETRIES 次）
+  }
+
+  if (added.length === 0) {
     throw new Error('沒有新詞彙被加入（可能全部重複或格式不符）');
   }
 
-  return result;
+  return { added, skipped };
 }
 
 /**
