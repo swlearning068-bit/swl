@@ -237,6 +237,10 @@ function renderQuestion() {
     btn.addEventListener('click', () => handleAnswer(parseInt(btn.dataset.index, 10)));
   });
 
+  if (document.activeElement instanceof HTMLElement) {
+    document.activeElement.blur();
+  }
+
   document.getElementById('quiz-feedback').classList.add('hidden');
   document.getElementById('quiz-next').classList.add('hidden');
 }

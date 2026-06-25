@@ -7,6 +7,7 @@ let practiceQueue = [];
 let practiceIndex = 0;
 let learnMode = 'flashcard';
 let fcAnswered = false;
+let fcAutoAdvanceTimer = null;
 
 /** 填空測驗狀態 */
 let fillBlankQueue = [];
@@ -162,6 +163,7 @@ function openFlashcard() {
 }
 
 function closeFlashcard() {
+  clearFcAutoAdvance();
   const overlay = document.getElementById('flashcard-overlay');
   overlay.classList.add('hidden');
   overlay.setAttribute('aria-hidden', 'true');
@@ -178,14 +180,28 @@ function generateFcOptions(term) {
   const sameCategory = pool.filter(t => t.category === term.category);
   const source = sameCategory.length >= 3 ? sameCategory : pool;
 
-  const distractors = shuffleArray(source)
-    .slice(0, 3)
-    .map(t => t.term_zh_hk);
+  const seen = new Set([term.term_zh_hk]);
+  const distractors = [];
+  for (const t of shuffleArray(source)) {
+    if (seen.has(t.term_zh_hk)) continue;
+    seen.add(t.term_zh_hk);
+    distractors.push(t.term_zh_hk);
+    if (distractors.length >= 3) break;
+  }
 
   return shuffleArray([term.term_zh_hk, ...distractors]);
 }
 
+function clearFcAutoAdvance() {
+  if (fcAutoAdvanceTimer) {
+    clearTimeout(fcAutoAdvanceTimer);
+    fcAutoAdvanceTimer = null;
+  }
+}
+
 function showCurrentQuestion() {
+  clearFcAutoAdvance();
+
   if (practiceIndex >= practiceQueue.length) {
     closeFlashcard();
     showToast('今日練習完成！做得好！', 'success');
@@ -200,15 +216,19 @@ function showCurrentQuestion() {
 
   const optionsEl = document.getElementById('fc-options');
   optionsEl.innerHTML = options.map((opt, i) =>
-    `<button class="fc-option" data-index="${i}">${escapeHtml(opt)}</button>`
+    `<button type="button" class="fc-option" data-index="${i}">${escapeHtml(opt)}</button>`
   ).join('');
 
   optionsEl.querySelectorAll('.fc-option').forEach(btn => {
     btn.addEventListener('click', () => handleFcAnswer(parseInt(btn.dataset.index, 10), options, term));
   });
 
+  if (document.activeElement instanceof HTMLElement) {
+    document.activeElement.blur();
+  }
+
   const feedback = document.getElementById('fc-feedback');
-  feedback.classList.add('hidden');
+  feedback.className = 'fc-feedback hidden';
   feedback.textContent = '';
   document.getElementById('fc-next').classList.add('hidden');
 
@@ -245,7 +265,8 @@ function handleFcAnswer(selectedIndex, options, term) {
   if (isCorrect) {
     feedback.className = 'fc-feedback correct';
     feedback.textContent = '✅ 答對了！';
-    setTimeout(() => {
+    fcAutoAdvanceTimer = setTimeout(() => {
+      fcAutoAdvanceTimer = null;
       practiceIndex++;
       showCurrentQuestion();
     }, 1200);
