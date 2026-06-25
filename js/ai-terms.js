@@ -52,7 +52,7 @@ function buildGenerateTermsMessage({ topic, count, category, difficulty }) {
   let msg = `請生成 ${count} 個社工專業英文詞彙，主題：${topic}`;
   if (category) msg += `，類別：${category}`;
   if (difficulty) msg += `，難度：${difficulty}`;
-  msg += '。';
+  msg += '。請用「主題延伸」方式出題：圍繞此主題提供相關學術與實務術語，不要只重複主題名稱本身。';
   return msg;
 }
 
