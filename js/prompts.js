@@ -144,7 +144,7 @@ const PROMPTS = {
 每個詞條必須包含以下欄位：
 - term_en（英文術語）
 - term_zh_hk（中文對照）
-- category（只能是：個案工作、倫理原則、介入取向、小組工作、社區工作、評估工具）
+- category（只能是：個案工作、倫理原則、介入取向、小組工作、社區工作、評估工具、理論）
 - difficulty（1、2 或 3）
 - definition_zh（繁體中文定義，1-2句）
 - easy_example_en（初中程度英文例句，例句必須包含 term_en）

@@ -6,7 +6,7 @@ const CUSTOM_TERMS_KEY = 'sw_custom_terms';
 const MAX_CUSTOM_TERMS = 500;
 
 const VALID_CATEGORIES = [
-  '個案工作', '倫理原則', '介入取向', '小組工作', '社區工作', '評估工具'
+  '個案工作', '倫理原則', '介入取向', '小組工作', '社區工作', '評估工具', '理論'
 ];
 
 /**
