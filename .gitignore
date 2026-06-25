@@ -1,0 +1,14 @@
+# API Key 設定（切勿上傳）
+config.js
+
+# 作業系統
+.DS_Store
+Thumbs.db
+
+# 編輯器
+.vscode/
+*.swp
+*.swo
+
+# 臨時檔案
+gen_terms.py

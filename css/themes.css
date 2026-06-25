@@ -1,0 +1,36 @@
+/* 顏色變數與模組主題色 */
+:root {
+  --color-primary: #2C5F8A;
+  --color-primary-dark: #1e4466;
+  --color-accent-blue: #4A90E2;
+  --color-accent-green: #27AE60;
+  --color-accent-orange: #E67E22;
+  --color-accent-purple: #8E44AD;
+  --color-accent-red: #E74C3C;
+  --color-bg: #F4F8FD;
+  --color-surface: #ffffff;
+  --color-text: #2c3e50;
+  --color-text-muted: #6c7a89;
+  --color-nav-bg: #1a1a1a;
+  --color-nav-text: #ffffff;
+  --color-border: #dde4ed;
+  --color-shadow: rgba(44, 95, 138, 0.12);
+
+  /* 模組主題色 */
+  --theme-grammar: var(--color-accent-blue);
+  --theme-vocab: var(--color-accent-green);
+  --theme-sentence: var(--color-accent-orange);
+  --theme-library: var(--color-primary);
+  --theme-learn: var(--color-accent-purple);
+  --theme-quiz: var(--color-accent-red);
+
+  --radius: 12px;
+  --radius-sm: 8px;
+  --font-size-base: 15px;
+  --font-size-title: 18px;
+  --font-size-lg: 20px;
+  --nav-height: 56px;
+  --tab-nav-height: 52px;
+  --max-width: 960px;
+  --transition: 0.2s ease;
+}

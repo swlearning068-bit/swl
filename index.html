@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="社工英文學習助手 — 專為香港社工學生設計的英文詞彙與寫作練習工具">
+  <title>🎓 社工英文學習助手</title>
+  <link rel="stylesheet" href="css/themes.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/flashcard.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- 頂部導航 -->
+  <header class="app-header">
+    <div class="app-title-row">
+      <div class="app-title">🎓 社工英文學習助手</div>
+      <div class="api-status-group">
+        <div id="api-status" class="api-status status-disconnected" title="DeepSeek API 連線狀態">
+          <span class="api-status-dot" aria-hidden="true"></span>
+          <span class="api-status-label">未設定 API</span>
+        </div>
+        <button id="api-disconnect" class="api-disconnect-btn hidden" type="button" title="取消 API 連接" aria-label="取消 API 連接">取消連接</button>
+      </div>
+    </div>
+    <nav class="tab-nav" role="tablist" aria-label="功能導航">
+      <button class="tab-btn active" data-tab="writing" role="tab" aria-selected="true">
+        <span class="tab-icon">📝</span>
+        <span class="tab-label">寫作</span>
+      </button>
+      <button class="tab-btn" data-tab="lookup" role="tab" aria-selected="false">
+        <span class="tab-icon">📚</span>
+        <span class="tab-label">詞彙查詢</span>
+      </button>
+      <button class="tab-btn" data-tab="sentence" role="tab" aria-selected="false">
+        <span class="tab-icon">✍️</span>
+        <span class="tab-label">造句</span>
+      </button>
+      <button class="tab-btn" data-tab="library" role="tab" aria-selected="false">
+        <span class="tab-icon">🗂️</span>
+        <span class="tab-label">詞彙庫</span>
+      </button>
+      <button class="tab-btn" data-tab="learn" role="tab" aria-selected="false">
+        <span class="tab-icon">📖</span>
+        <span class="tab-label">生字學習</span>
+      </button>
+      <button class="tab-btn" data-tab="quiz" role="tab" aria-selected="false">
+        <span class="tab-icon">🧪</span>
+        <span class="tab-label">測驗</span>
+      </button>
+      <button class="tab-btn" data-tab="settings" role="tab" aria-selected="false">
+        <span class="tab-icon">⚙️</span>
+        <span class="tab-label">設定</span>
+      </button>
+    </nav>
+  </header>
+
+  <main class="main-content">
+
+    <!-- 模組 1：寫作測試 -->
+    <section id="panel-writing" class="tab-panel active" role="tabpanel">
+      <div class="panel-header">
+        <h2>📝 寫作測試</h2>
+        <p>選擇難度完成社工情境英文寫作，重視表達想法，不執著文法</p>
+      </div>
+
+      <div id="writing-empty" class="empty-state card">
+        <div class="empty-state-icon">✍️</div>
+        <p>選擇難度，輸入或點選寫作情境，<br>取得題目後開始你的英文寫作！</p>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">難度選擇</label>
+        <div class="difficulty-group">
+          <button class="difficulty-btn active" data-writing-level="初級">初級</button>
+          <button class="difficulty-btn" data-writing-level="中級">中級</button>
+        </div>
+        <p id="writing-level-desc" class="ai-hint" style="margin-top:0.75rem">初級：提供供詞協助寫作，評核不執著文法</p>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label" for="writing-topic">寫作情境</label>
+        <input type="text" id="writing-topic" class="input" placeholder="例如：探訪獨居長者、個案開案評估">
+      </div>
+
+      <div class="chip-scroll" id="writing-chips">
+        <button class="chip" data-text="探訪獨居長者">探訪獨居長者</button>
+        <button class="chip" data-text="個案開案評估">個案開案評估</button>
+        <button class="chip" data-text="青少年外展">青少年外展</button>
+        <button class="chip" data-text="家庭調解">家庭調解</button>
+        <button class="chip" data-text="危機介入">危機介入</button>
+        <button class="chip" data-text="小組工作">小組工作</button>
+      </div>
+
+      <div class="panel-actions">
+        <button id="writing-get-prompt" class="btn btn-primary">取得寫作題目</button>
+        <button id="writing-clear" class="btn btn-ghost">重新開始</button>
+      </div>
+
+      <div id="writing-prompt" class="result-area hidden" aria-live="polite"></div>
+
+      <div id="writing-compose" class="hidden" style="margin-top:1.25rem">
+        <div class="form-group">
+          <label class="form-label" for="writing-input">你的英文寫作</label>
+          <textarea id="writing-input" class="textarea" rows="6" placeholder="請根據題目用英文寫作（約 3-6 句）…"></textarea>
+        </div>
+        <button id="writing-submit" class="btn btn-secondary" style="width:100%">提交評估</button>
+      </div>
+
+      <div id="writing-feedback" class="result-area hidden" style="margin-top:1rem" aria-live="polite"></div>
+    </section>
+
+    <!-- 模組 2：詞彙查詢 -->
+    <section id="panel-lookup" class="tab-panel" role="tabpanel">
+      <div class="panel-header">
+        <h2>📚 詞彙查詢</h2>
+        <p>輸入中文社工概念，查詢對應的專業英文術語</p>
+      </div>
+
+      <div id="lookup-empty" class="empty-state card">
+        <div class="empty-state-icon">🔍</div>
+        <p>輸入一個社工工作概念，例如「個案管理」，<br>我會告訴你對應的英文術語和用法！</p>
+      </div>
+
+      <div class="form-group">
+        <input type="text" id="lookup-input" class="input" placeholder="輸入中文社工概念，例如：個案管理">
+      </div>
+
+      <div class="chip-scroll" id="lookup-chips">
+        <button class="chip" data-text="個案管理">個案管理</button>
+        <button class="chip" data-text="情緒支援">情緒支援</button>
+        <button class="chip" data-text="風險評估">風險評估</button>
+        <button class="chip" data-text="危機介入">危機介入</button>
+        <button class="chip" data-text="家庭調解">家庭調解</button>
+        <button class="chip" data-text="社區外展">社區外展</button>
+        <button class="chip" data-text="保密原則">保密原則</button>
+        <button class="chip" data-text="增權">增權</button>
+        <button class="chip" data-text="倡議">倡議</button>
+        <button class="chip" data-text="服務計劃">服務計劃</button>
+      </div>
+
+      <div class="panel-actions">
+        <button id="lookup-submit" class="btn btn-primary">查詢詞彙</button>
+        <button id="lookup-add-vocab" class="btn btn-secondary hidden">加入離線題庫</button>
+        <button id="lookup-clear" class="btn btn-ghost">清除</button>
+      </div>
+
+      <div id="lookup-result" class="result-area hidden" aria-live="polite"></div>
+    </section>
+
+    <!-- 模組 3：情境造句 -->
+    <section id="panel-sentence" class="tab-panel" role="tabpanel">
+      <div class="panel-header">
+        <h2>✍️ 情境造句</h2>
+        <p>輸入社工工作場景，生成英文練習句子</p>
+      </div>
+
+      <div id="sentence-empty" class="empty-state card">
+        <div class="empty-state-icon">💬</div>
+        <p>描述一個社工工作場景，例如「探訪獨居長者」，<br>我會生成適合你程度的英文練習句子！</p>
+      </div>
+
+      <div class="form-group">
+        <input type="text" id="sentence-input" class="input" placeholder="輸入一個社工工作場景，例如：探訪獨居長者">
+      </div>
+
+      <div class="chip-scroll" id="sentence-chips">
+        <button class="chip" data-text="探訪獨居長者">探訪獨居長者</button>
+        <button class="chip" data-text="協助殘疾人士">協助殘疾人士</button>
+        <button class="chip" data-text="家庭糾紛調解">家庭糾紛調解</button>
+        <button class="chip" data-text="青少年外展服務">青少年外展服務</button>
+        <button class="chip" data-text="精神健康支援">精神健康支援</button>
+        <button class="chip" data-text="個案檢討會議">個案檢討會議</button>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">難度選擇</label>
+        <div class="difficulty-group">
+          <button class="difficulty-btn active" data-level="初級">初級</button>
+          <button class="difficulty-btn" data-level="中級">中級</button>
+        </div>
+      </div>
+
+      <div class="panel-actions">
+        <button id="sentence-submit" class="btn btn-primary">生成練習</button>
+        <button id="sentence-clear" class="btn btn-ghost">清除</button>
+      </div>
+
+      <div id="sentence-result" class="result-area hidden" aria-live="polite"></div>
+
+      <!-- 抄寫練習區 -->
+      <div id="copy-practice" class="copy-practice hidden">
+        <h3 class="card-title">✍️ 抄寫練習</h3>
+        <p style="font-size:14px;color:var(--color-text-muted);margin-bottom:1rem;">請逐句抄寫上方練習句子，完成後按「對比」查看差異。</p>
+        <div class="copy-item">
+          <label for="copy-input-1">句子 1</label>
+          <input type="text" id="copy-input-1" class="input" placeholder="請抄寫第一句...">
+          <div id="copy-diff-1" class="copy-diff"></div>
+        </div>
+        <div class="copy-item">
+          <label for="copy-input-2">句子 2</label>
+          <input type="text" id="copy-input-2" class="input" placeholder="請抄寫第二句...">
+          <div id="copy-diff-2" class="copy-diff"></div>
+        </div>
+        <div class="copy-item">
+          <label for="copy-input-3">句子 3</label>
+          <input type="text" id="copy-input-3" class="input" placeholder="請抄寫第三句...">
+          <div id="copy-diff-3" class="copy-diff"></div>
+        </div>
+        <button id="copy-compare" class="btn btn-secondary">對比</button>
+      </div>
+    </section>
+
+    <!-- 模組 4：詞彙庫 -->
+    <section id="panel-library" class="tab-panel" role="tabpanel">
+      <div class="panel-header">
+        <h2>🗂️ 詞彙庫</h2>
+        <p>瀏覽社工專業英文詞彙，點擊卡片查看詳情</p>
+      </div>
+
+      <div class="form-group">
+        <input type="search" id="library-search" class="input" placeholder="搜尋英文、中文或標籤...">
+      </div>
+
+      <div class="chip-scroll" id="library-sources">
+        <button class="chip active" data-source="全部">全部來源</button>
+        <button class="chip" data-source="內建">📦 內建</button>
+        <button class="chip" data-source="AI">🤖 AI 擴充</button>
+      </div>
+
+      <div class="chip-scroll" id="library-categories">
+        <button class="chip active" data-category="全部">全部</button>
+        <button class="chip" data-category="個案工作">個案工作</button>
+        <button class="chip" data-category="倫理原則">倫理原則</button>
+        <button class="chip" data-category="介入取向">介入取向</button>
+        <button class="chip" data-category="小組工作">小組工作</button>
+        <button class="chip" data-category="社區工作">社區工作</button>
+        <button class="chip" data-category="評估工具">評估工具</button>
+      </div>
+
+      <div id="library-stats" class="vocab-stats">載入中...</div>
+
+      <div class="library-toolbar btn-group">
+        <button id="library-export" class="btn btn-sm btn-ghost">📤 匯出 AI 題庫</button>
+        <button id="library-import-btn" class="btn btn-sm btn-ghost">📥 匯入題庫</button>
+        <input type="file" id="library-import-file" accept=".json,application/json" class="hidden">
+        <button id="library-clear-ai" class="btn btn-sm btn-ghost">🗑️ 清除 AI 詞彙</button>
+      </div>
+
+      <div id="library-list"></div>
+    </section>
+
+    <!-- 模組 5：生字學習 -->
+    <section id="panel-learn" class="tab-panel" role="tabpanel">
+      <div class="panel-header">
+        <h2>📖 生字學習</h2>
+        <p>用選擇題和填空測驗記憶詞彙；有 API 時可輸入主題自動補充新詞</p>
+      </div>
+
+      <!-- 學習主頁 -->
+      <div id="learn-home">
+        <div id="learn-streak" class="streak-badge">🔥 連續學習 0 天</div>
+        <p id="learn-bank-info" class="vocab-stats" style="margin-bottom:0.5rem">📚 題庫載入中…</p>
+        <p id="learn-mode-hint" class="ai-hint" style="margin-bottom:1rem"></p>
+
+        <div id="learn-stats" class="stats-grid">
+          <div class="stat-box"><div class="stat-number" id="stat-learned">0</div><div class="stat-label">已學</div></div>
+          <div class="stat-box"><div class="stat-number" id="stat-learning">0</div><div class="stat-label">學習中</div></div>
+          <div class="stat-box"><div class="stat-number" id="stat-mastered">0</div><div class="stat-label">已掌握</div></div>
+          <div class="stat-box"><div class="stat-number" id="stat-due">0</div><div class="stat-label">今日待複習</div></div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">練習類別（可選）</label>
+          <select id="learn-category" class="select">
+            <option value="">全部類別</option>
+            <option value="個案工作">個案工作</option>
+            <option value="倫理原則">倫理原則</option>
+            <option value="介入取向">介入取向</option>
+            <option value="小組工作">小組工作</option>
+            <option value="社區工作">社區工作</option>
+            <option value="評估工具">評估工具</option>
+          </select>
+        </div>
+
+        <div class="learn-mode-tabs">
+          <button class="learn-mode-tab active" data-mode="flashcard">🃏 選擇題</button>
+          <button class="learn-mode-tab" data-mode="fillblank">✏️ 填空測驗</button>
+        </div>
+
+        <div id="learn-ai-fields" class="ai-optional-fields hidden">
+          <div class="form-group">
+            <label class="form-label" for="learn-ai-topic">AI 補充主題（選填）</label>
+            <input type="text" id="learn-ai-topic" class="input" placeholder="例如：精神健康 — 填寫後會先補充新詞再練習">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="learn-ai-count">AI 補充數量</label>
+            <select id="learn-ai-count" class="select">
+              <option value="5">5 個詞</option>
+              <option value="10">10 個詞</option>
+            </select>
+          </div>
+        </div>
+
+        <button id="learn-start" class="btn btn-primary" style="width:100%">開始練習</button>
+      </div>
+
+      <!-- 填空測驗區 -->
+      <div id="fillblank-area" class="fill-blank-area hidden">
+        <div class="progress-text" id="fillblank-progress">第 1 / 10 題</div>
+        <div class="progress-bar-wrap"><div class="progress-bar-fill" id="fillblank-bar" style="width:10%"></div></div>
+        <div class="fill-blank-sentence" id="fillblank-sentence"></div>
+        <input type="text" id="fillblank-input" class="input fill-blank-input" placeholder="填入缺失的詞彙">
+        <div class="btn-group" style="justify-content:center">
+          <button id="fillblank-hint" class="btn btn-ghost btn-sm">💡 提示（首字母）</button>
+          <button id="fillblank-submit" class="btn btn-primary btn-sm">提交答案</button>
+        </div>
+        <div id="fillblank-feedback" class="fill-feedback hidden"></div>
+        <button id="fillblank-next" class="btn btn-primary hidden" style="width:100%;margin-top:1rem">下一題</button>
+        <button id="fillblank-back" class="btn btn-ghost" style="margin-top:1rem">← 返回主頁</button>
+      </div>
+    </section>
+
+    <!-- 模組 6：測驗 -->
+    <section id="panel-quiz" class="tab-panel" role="tabpanel">
+      <div class="panel-header">
+        <h2>🧪 測驗模式</h2>
+        <p>從題庫出題測試；有 API 時可輸入主題自動補充新詞</p>
+      </div>
+
+      <!-- 測驗設定 -->
+      <div id="quiz-setup" class="quiz-setup card">
+        <p id="quiz-mode-hint" class="ai-hint" style="margin-bottom:1rem"></p>
+        <div class="form-group">
+          <label class="form-label" for="quiz-category">類別</label>
+          <select id="quiz-category" class="select">
+            <option value="">全部類別</option>
+            <option value="個案工作">個案工作</option>
+            <option value="倫理原則">倫理原則</option>
+            <option value="介入取向">介入取向</option>
+            <option value="小組工作">小組工作</option>
+            <option value="社區工作">社區工作</option>
+            <option value="評估工具">評估工具</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="quiz-difficulty">難度</label>
+          <select id="quiz-difficulty" class="select">
+            <option value="">全部難度</option>
+            <option value="1">初級（難度 1）</option>
+            <option value="2">中級（難度 2）</option>
+            <option value="3">進階（難度 3）</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="quiz-count">題數</label>
+          <select id="quiz-count" class="select">
+            <option value="5">5 題</option>
+            <option value="10" selected>10 題</option>
+            <option value="20">20 題</option>
+          </select>
+        </div>
+
+        <div id="quiz-ai-fields" class="ai-optional-fields hidden">
+          <div class="form-group">
+            <label class="form-label" for="quiz-ai-topic">AI 補充主題（選填）</label>
+            <input type="text" id="quiz-ai-topic" class="input" placeholder="例如：小組工作 — 填寫後會先補充新詞再測驗">
+          </div>
+        </div>
+
+        <button id="quiz-start" class="btn btn-primary" style="width:100%">開始測驗</button>
+      </div>
+
+      <!-- 答題區 -->
+      <div id="quiz-play" class="hidden">
+        <div class="progress-text" id="quiz-progress">第 1 / 10 題</div>
+        <div class="progress-bar-wrap"><div class="progress-bar-fill" id="quiz-bar" style="width:10%"></div></div>
+        <div class="card">
+          <div class="tag" id="quiz-type-tag">英翻中</div>
+          <div class="quiz-question" id="quiz-question"></div>
+          <div class="quiz-options" id="quiz-options"></div>
+          <div id="quiz-feedback" class="quiz-feedback hidden"></div>
+          <button id="quiz-next" class="btn btn-primary hidden" style="margin-top:1rem;width:100%">下一題</button>
+        </div>
+      </div>
+
+      <!-- 結果頁 -->
+      <div id="quiz-result" class="hidden">
+        <div class="card">
+          <h3 class="card-title" style="text-align:center">測驗結果</h3>
+          <div class="quiz-result-score" id="quiz-score">0%</div>
+          <p style="text-align:center;color:var(--color-text-muted)" id="quiz-score-detail"></p>
+          <div id="quiz-wrong-list"></div>
+          <div class="btn-group" style="margin-top:1.25rem">
+            <button id="quiz-add-review" class="btn btn-secondary">加入生字複習</button>
+            <button id="quiz-retry" class="btn btn-outline">再測一次</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 模組 7：設定 -->
+    <section id="panel-settings" class="tab-panel" role="tabpanel">
+      <div class="panel-header">
+        <h2>⚙️ 設定</h2>
+        <p>在本裝置設定 API Key、備份學習資料，或同步至你的 GitHub</p>
+      </div>
+
+      <div class="card settings-section">
+        <h3 class="card-title">🔑 DeepSeek API</h3>
+        <p class="settings-hint">API Key 僅儲存於本裝置瀏覽器，不會上傳至 GitHub Pages。GitHub Pages 使用者請在此填入 Key。</p>
+        <p id="settings-api-status" class="settings-status">尚未設定 API Key</p>
+        <div class="form-group">
+          <label class="form-label" for="settings-api-key">DeepSeek API Key</label>
+          <input type="password" id="settings-api-key" class="input" placeholder="sk-..." autocomplete="off">
+        </div>
+        <div class="btn-group">
+          <button id="settings-save-api" class="btn btn-primary btn-sm">儲存並測試</button>
+          <button id="settings-clear-api" class="btn btn-ghost btn-sm">清除 Key</button>
+        </div>
+      </div>
+
+      <div class="card settings-section">
+        <h3 class="card-title">💾 學習資料備份</h3>
+        <p class="settings-hint">匯出 JSON 檔案後，可手動複製到 iPhone、Android 或 PC 再匯入。包含學習進度、連續天數與 AI 詞彙。</p>
+        <p id="settings-backup-summary" class="settings-status">載入中…</p>
+        <div class="btn-group settings-btn-wrap">
+          <button id="settings-export-backup" class="btn btn-secondary btn-sm">📤 匯出 JSON</button>
+          <button id="settings-import-merge" class="btn btn-ghost btn-sm">📥 合併匯入</button>
+          <button id="settings-import-replace" class="btn btn-ghost btn-sm">📥 覆蓋匯入</button>
+          <input type="file" id="settings-import-file" accept=".json,application/json" class="hidden">
+        </div>
+      </div>
+
+      <div class="card settings-section">
+        <h3 class="card-title">🐙 GitHub 同步</h3>
+        <p class="settings-hint">使用你的 GitHub Personal Access Token（只需 <code>gist</code> 權限）將備份存至私有 Gist。Token 僅存本裝置。</p>
+        <p id="settings-github-status" class="settings-status">未連接 GitHub</p>
+        <p id="settings-last-sync" class="settings-meta">尚未同步</p>
+        <div class="form-group">
+          <label class="form-label" for="settings-github-token">GitHub Token</label>
+          <input type="password" id="settings-github-token" class="input" placeholder="ghp_..." autocomplete="off">
+        </div>
+        <div class="btn-group settings-btn-wrap">
+          <button id="settings-save-github" class="btn btn-primary btn-sm">連接 GitHub</button>
+          <button id="settings-clear-github" class="btn btn-ghost btn-sm">清除 Token</button>
+        </div>
+        <div class="btn-group settings-btn-wrap" style="margin-top:0.75rem">
+          <button id="settings-github-upload" class="btn btn-secondary btn-sm">⬆️ 上傳至 GitHub</button>
+          <button id="settings-github-download-merge" class="btn btn-ghost btn-sm">⬇️ 合併下載</button>
+          <button id="settings-github-download-replace" class="btn btn-ghost btn-sm">⬇️ 覆蓋下載</button>
+        </div>
+        <label class="settings-checkbox">
+          <input type="checkbox" id="settings-github-auto-sync">
+          <span>學習資料變更後自動上傳至 GitHub（約 5 秒延遲）</span>
+        </label>
+        <details class="settings-details">
+          <summary>如何建立 GitHub Token？</summary>
+          <ol>
+            <li>前往 GitHub → Settings → Developer settings → Personal access tokens</li>
+            <li>建立 Fine-grained token 或 Classic token</li>
+            <li>勾選 <strong>Gist</strong> 權限（讀寫）</li>
+            <li>複製 Token 貼到上方欄位</li>
+          </ol>
+        </details>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- 生字選擇題全螢幕 overlay -->
+  <div id="flashcard-overlay" class="flashcard-overlay hidden" aria-hidden="true">
+    <button id="flashcard-close" class="flashcard-close" aria-label="關閉">✕</button>
+    <div class="flashcard-top-bar">
+      <div class="progress-text" id="flashcard-progress">第 1 / 10 題</div>
+      <div class="progress-bar-wrap"><div class="progress-bar-fill" id="flashcard-bar" style="width:10%"></div></div>
+    </div>
+    <div class="flashcard-quiz-card">
+      <div class="flashcard-term" id="fc-term"></div>
+      <p class="flashcard-prompt">請選出正確的中文意思</p>
+      <div id="fc-options" class="fc-options"></div>
+      <div id="fc-feedback" class="fc-feedback hidden"></div>
+      <button id="fc-next" class="btn btn-primary hidden" style="width:100%;margin-top:1rem">下一題</button>
+    </div>
+  </div>
+
+  <!-- Toast 容器 -->
+  <div id="toast-container" aria-live="polite"></div>
+
+  <!-- Scripts（config.js 可選，GitHub Pages 無此檔時改用設定分頁） -->
+  <script src="config.js" onerror="console.info('config.js 未找到，請在設定分頁填入 API Key')"></script>
+  <script src="js/prompts.js"></script>
+  <script src="js/deepseek.js"></script>
+  <script src="js/progress.js"></script>
+  <script src="js/term-bank.js"></script>
+  <script src="js/backup.js"></script>
+  <script src="js/github-sync.js"></script>
+  <script src="js/ai-terms.js"></script>
+  <script src="js/vocab-library.js"></script>
+  <script src="js/vocab-learn.js"></script>
+  <script src="js/quiz.js"></script>
+  <script src="js/settings.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

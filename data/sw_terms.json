@@ -1,0 +1,943 @@
+[
+  {
+    "id": "sw_001",
+    "term_en": "assessment",
+    "term_zh_hk": "評估",
+    "category": "個案工作",
+    "difficulty": 1,
+    "importance_exam": 5,
+    "definition_zh": "了解服務使用者的需要、強項和問題的過程，是社工介入的第一步。",
+    "easy_example_en": "The social worker conducted an assessment of the client needs.",
+    "example_zh": "社工進行了個案需要評估。",
+    "common_collocations": [
+      "conduct an assessment",
+      "holistic assessment"
+    ],
+    "related_terms": [
+      "risk assessment",
+      "intervention",
+      "case management"
+    ],
+    "common_mistake": "說 make assessment，正確是 conduct an assessment。",
+    "wrong_example_en": "I make assessment to my client every week.",
+    "corrected_example_en": "I conduct an assessment for my client every week.",
+    "grammar_note_zh": "assessment 是不可數名詞，前面用 an 因為指一次評估過程。",
+    "pronunciation": "/əˈsesmənt/",
+    "memory_tip_zh": "記住 conduct an assessment 是固定搭配。",
+    "ethical_note_zh": "評估時須尊重服務使用者的私隱和自決權。",
+    "hk_context_zh": "香港社工在開案時須完成綜合評估報告。",
+    "tags": [
+      "core",
+      "bachelor",
+      "fieldwork"
+    ]
+  },
+  {
+    "id": "sw_002",
+    "term_en": "case management",
+    "term_zh_hk": "個案管理",
+    "category": "個案工作",
+    "difficulty": 2,
+    "importance_exam": 5,
+    "definition_zh": "統籌和協調服務使用者所需的各項服務和資源的過程。",
+    "easy_example_en": "Case management helps clients access the right services.",
+    "example_zh": "個案管理協助服務使用者獲得適當的服務。",
+    "common_collocations": [
+      "provide case management",
+      "case management plan"
+    ],
+    "related_terms": [
+      "assessment",
+      "referral",
+      "service plan"
+    ],
+    "common_mistake": "說 case manage a client，正確是 provide case management for a client。",
+    "wrong_example_en": "I case manage the elderly client at the centre.",
+    "corrected_example_en": "I provide case management for the elderly client at the centre.",
+    "grammar_note_zh": "case management 是名詞片語，動詞用 provide 或 coordinate。",
+    "pronunciation": "/keɪs ˈmænɪdʒmənt/",
+    "memory_tip_zh": "case = 個案，management = 管理。",
+    "ethical_note_zh": "個案管理須以服務使用者的最佳利益為依歸。",
+    "hk_context_zh": "香港社會福利署要求受資助機構提供個案管理服務。",
+    "tags": [
+      "core",
+      "bachelor"
+    ]
+  },
+  {
+    "id": "sw_003",
+    "term_en": "intervention",
+    "term_zh_hk": "介入",
+    "category": "個案工作",
+    "difficulty": 2,
+    "importance_exam": 5,
+    "definition_zh": "社工為協助服務使用者解決問題而採取的專業行動和策略。",
+    "easy_example_en": "The social worker planned an intervention to support the family.",
+    "example_zh": "社工計劃介入以支援該家庭。",
+    "common_collocations": [
+      "early intervention",
+      "crisis intervention"
+    ],
+    "related_terms": [
+      "assessment",
+      "crisis intervention",
+      "referral"
+    ],
+    "common_mistake": "說 do intervention，正確是 plan or implement an intervention。",
+    "wrong_example_en": "We do intervention for the teenager last month.",
+    "corrected_example_en": "We implemented an intervention for the teenager last month.",
+    "grammar_note_zh": "intervention 是可數名詞，需要加 an。",
+    "pronunciation": "/ˌɪntəˈvenʃn/",
+    "memory_tip_zh": "inter- 有「介入中間」的意思。",
+    "ethical_note_zh": "介入前須取得服務使用者的知情同意。",
+    "hk_context_zh": "香港學校社工經常需要為有需要的學生提供早期介入。",
+    "tags": [
+      "core",
+      "bachelor",
+      "fieldwork"
+    ]
+  },
+  {
+    "id": "sw_004",
+    "term_en": "risk assessment",
+    "term_zh_hk": "風險評估",
+    "category": "個案工作",
+    "difficulty": 2,
+    "importance_exam": 5,
+    "definition_zh": "識別和評估服務使用者可能面對的危險和傷害風險的過程。",
+    "easy_example_en": "A risk assessment was completed before the home visit.",
+    "example_zh": "在家訪前完成了風險評估。",
+    "common_collocations": [
+      "conduct a risk assessment",
+      "risk assessment tool"
+    ],
+    "related_terms": [
+      "assessment",
+      "crisis intervention",
+      "confidentiality"
+    ],
+    "common_mistake": "說 make risk assessment，正確是 conduct a risk assessment。",
+    "wrong_example_en": "The worker make risk assessment before visit.",
+    "corrected_example_en": "The worker conducted a risk assessment before the visit.",
+    "grammar_note_zh": "risk assessment 前面通常用 conduct 或 carry out。",
+    "pronunciation": "/rɪsk əˈsesmənt/",
+    "memory_tip_zh": "risk = 風險，assessment = 評估。",
+    "ethical_note_zh": "風險評估結果可能涉及通報責任，須謹慎處理。",
+    "hk_context_zh": "香港處理虐待個案時必須進行風險評估。",
+    "tags": [
+      "core",
+      "bachelor"
+    ]
+  },
+  {
+    "id": "sw_005",
+    "term_en": "referral",
+    "term_zh_hk": "轉介",
+    "category": "個案工作",
+    "difficulty": 1,
+    "importance_exam": 4,
+    "definition_zh": "將服務使用者轉介到其他更合適的服務或專業人員。",
+    "easy_example_en": "The social worker made a referral to a mental health service.",
+    "example_zh": "社工轉介個案到精神健康服務。",
+    "common_collocations": [
+      "make a referral",
+      "referral letter"
+    ],
+    "related_terms": [
+      "case management",
+      "assessment",
+      "service plan"
+    ],
+    "common_mistake": "說 refer to client，正確是 refer the client to a service。",
+    "wrong_example_en": "I refer to the hospital for the client.",
+    "corrected_example_en": "I referred the client to the hospital.",
+    "grammar_note_zh": "refer 的用法是 refer someone to something。",
+    "pronunciation": "/rɪˈfɜːrəl/",
+    "memory_tip_zh": "refer = 轉介，referral = 轉介（名詞）。",
+    "ethical_note_zh": "轉介前須告知服務使用者並取得同意。",
+    "hk_context_zh": "香港社工經常需要轉介個案到醫管局或 NGO 服務。",
+    "tags": [
+      "core",
+      "bachelor"
+    ]
+  },
+  {
+    "id": "sw_006",
+    "term_en": "confidentiality",
+    "term_zh_hk": "保密",
+    "category": "倫理原則",
+    "difficulty": 2,
+    "importance_exam": 5,
+    "definition_zh": "社工對服務使用者資料保密的專業責任和原則。",
+    "easy_example_en": "Confidentiality is a key principle in social work practice.",
+    "example_zh": "保密是社工實務的重要原則。",
+    "common_collocations": [
+      "maintain confidentiality",
+      "breach of confidentiality"
+    ],
+    "related_terms": [
+      "informed consent",
+      "professional boundary"
+    ],
+    "common_mistake": "說 keep secret for client，應用 maintain confidentiality。",
+    "wrong_example_en": "I keep secret for my client information.",
+    "corrected_example_en": "I maintain confidentiality regarding my client information.",
+    "grammar_note_zh": "confidentiality 是不可數名詞，用 maintain 而非 keep。",
+    "pronunciation": "/ˌkɒnfɪdenʃiˈæləti/",
+    "memory_tip_zh": "confidential 是保密的。",
+    "ethical_note_zh": "只有在保護生命或法律要求下才可打破保密原則。",
+    "hk_context_zh": "香港社工註冊條例要求社工遵守保密原則。",
+    "tags": [
+      "core",
+      "bachelor",
+      "ethics"
+    ]
+  },
+  {
+    "id": "sw_007",
+    "term_en": "informed consent",
+    "term_zh_hk": "知情同意",
+    "category": "倫理原則",
+    "difficulty": 2,
+    "importance_exam": 5,
+    "definition_zh": "服務使用者在充分了解服務內容和風險後自願同意接受服務。",
+    "easy_example_en": "The client gave informed consent before starting the counselling.",
+    "example_zh": "個案在開始輔導前給予了知情同意。",
+    "common_collocations": [
+      "obtain informed consent",
+      "written informed consent"
+    ],
+    "related_terms": [
+      "self-determination",
+      "confidentiality"
+    ],
+    "common_mistake": "說 agree to service，正式用語是 give informed consent。",
+    "wrong_example_en": "The client agree to the service without knowing details.",
+    "corrected_example_en": "The client gave informed consent after understanding the service details.",
+    "grammar_note_zh": "consent 是不可數名詞，give consent 是固定搭配。",
+    "pronunciation": "/ɪnˈfɔːmd kənˈsent/",
+    "memory_tip_zh": "informed = 知情的，consent = 同意。",
+    "ethical_note_zh": "知情同意是尊重服務使用者自決權的基礎。",
+    "hk_context_zh": "香港研究倫理審查要求取得書面知情同意。",
+    "tags": [
+      "core",
+      "bachelor",
+      "ethics"
+    ]
+  },
+  {
+    "id": "sw_008",
+    "term_en": "self-determination",
+    "term_zh_hk": "自決",
+    "category": "倫理原則",
+    "difficulty": 3,
+    "importance_exam": 4,
+    "definition_zh": "尊重服務使用者自行決定自己生活和服務選擇的權利。",
+    "easy_example_en": "Self-determination means respecting the clients own choices.",
+    "example_zh": "自決意味著尊重服務使用者自己的選擇。",
+    "common_collocations": [
+      "promote self-determination",
+      "right to self-determination"
+    ],
+    "related_terms": [
+      "informed consent",
+      "empowerment",
+      "person-centered"
+    ],
+    "common_mistake": "說 self-decision，正確是 self-determination。",
+    "wrong_example_en": "We respect the client self-decision in the case.",
+    "corrected_example_en": "We respect the clients right to self-determination in the case.",
+    "grammar_note_zh": "self-determination 是固定專業術語。",
+    "pronunciation": "/ˌself dɪˌtɜːmɪˈneɪʃn/",
+    "memory_tip_zh": "determination 有「決定」的意思。",
+    "ethical_note_zh": "即使社工不同意，也須尊重服務使用者的自決權。",
+    "hk_context_zh": "香港康復服務強調殘疾人士的自決權。",
+    "tags": [
+      "core",
+      "bachelor",
+      "ethics"
+    ]
+  },
+  {
+    "id": "sw_009",
+    "term_en": "dual relationship",
+    "term_zh_hk": "雙重關係",
+    "category": "倫理原則",
+    "difficulty": 3,
+    "importance_exam": 4,
+    "definition_zh": "社工與服務使用者之間同時存在超過一種關係，可能影響專業判斷。",
+    "easy_example_en": "A dual relationship can affect professional judgment.",
+    "example_zh": "雙重關係可能影響專業判斷。",
+    "common_collocations": [
+      "avoid dual relationships",
+      "dual relationship boundary"
+    ],
+    "related_terms": [
+      "professional boundary",
+      "confidentiality"
+    ],
+    "common_mistake": "說 double relationship，正確是 dual relationship。",
+    "wrong_example_en": "The worker has double relationship with the client.",
+    "corrected_example_en": "The worker has a dual relationship with the client.",
+    "grammar_note_zh": "dual 不是 double，這是社工專業術語。",
+    "pronunciation": "/ˈdjuːəl rɪˈleɪʃnʃɪp/",
+    "memory_tip_zh": "dual = 雙重的。",
+    "ethical_note_zh": "社工應避免與服務使用者建立雙重關係。",
+    "hk_context_zh": "在小型社區中，社工更需注意避免雙重關係。",
+    "tags": [
+      "bachelor",
+      "ethics"
+    ]
+  },
+  {
+    "id": "sw_010",
+    "term_en": "professional boundary",
+    "term_zh_hk": "專業界線",
+    "category": "倫理原則",
+    "difficulty": 2,
+    "importance_exam": 5,
+    "definition_zh": "社工與服務使用者之間保持適當專業距離的界線。",
+    "easy_example_en": "Maintaining a professional boundary protects both the worker and client.",
+    "example_zh": "保持專業界線保護社工和服務使用者雙方。",
+    "common_collocations": [
+      "maintain professional boundaries",
+      "boundary violation"
+    ],
+    "related_terms": [
+      "dual relationship",
+      "confidentiality"
+    ],
+    "common_mistake": "說 professional line，正確是 professional boundary。",
+    "wrong_example_en": "The worker cross the professional line with client.",
+    "corrected_example_en": "The worker crossed the professional boundary with the client.",
+    "grammar_note_zh": "boundary 用複數 boundaries 表示整體界線概念。",
+    "pronunciation": "/prəˈfeʃənl ˈbaʊndri/",
+    "memory_tip_zh": "boundary = 界線。",
+    "ethical_note_zh": "界線模糊可能導致剝削或傷害服務使用者。",
+    "hk_context_zh": "香港社工倫理守則明確要求保持專業界線。",
+    "tags": [
+      "core",
+      "bachelor",
+      "ethics"
+    ]
+  },
+  {
+    "id": "sw_011",
+    "term_en": "strengths-based approach",
+    "term_zh_hk": "強項為本取向",
+    "category": "介入取向",
+    "difficulty": 3,
+    "importance_exam": 4,
+    "definition_zh": "聚焦服務使用者的強項和資源，而非只關注問題和缺陷的介入取向。",
+    "easy_example_en": "A strengths-based approach focuses on what clients can do well.",
+    "example_zh": "強項為本取向聚焦服務使用者做得好的方面。",
+    "common_collocations": [
+      "adopt a strengths-based approach"
+    ],
+    "related_terms": [
+      "empowerment",
+      "person-centered",
+      "assessment"
+    ],
+    "common_mistake": "說 strength approach，正確是 strengths-based approach。",
+    "wrong_example_en": "We use strength approach with the client.",
+    "corrected_example_en": "We use a strengths-based approach with the client.",
+    "grammar_note_zh": "strengths 用複數，based 是過去分詞作形容詞。",
+    "pronunciation": "/streŋθs beɪst əˈprəʊtʃ/",
+    "memory_tip_zh": "strengths = 強項。",
+    "ethical_note_zh": "此取向尊重服務使用者的能力和自主性。",
+    "hk_context_zh": "香港近年社會工作強調強項為本介入模式。",
+    "tags": [
+      "bachelor",
+      "theory"
+    ]
+  },
+  {
+    "id": "sw_012",
+    "term_en": "empowerment",
+    "term_zh_hk": "增權",
+    "category": "介入取向",
+    "difficulty": 2,
+    "importance_exam": 5,
+    "definition_zh": "協助服務使用者獲得能力、信心和資源，從而改善自身處境的過程。",
+    "easy_example_en": "Empowerment helps clients take control of their own lives.",
+    "example_zh": "增權協助服務使用者掌握自己生活的主導權。",
+    "common_collocations": [
+      "promote empowerment",
+      "empowerment approach"
+    ],
+    "related_terms": [
+      "self-determination",
+      "advocacy"
+    ],
+    "common_mistake": "說 give power to client，應用 empower the client。",
+    "wrong_example_en": "We give power to the client to make decisions.",
+    "corrected_example_en": "We empower the client to make their own decisions.",
+    "grammar_note_zh": "empowerment 是名詞，empower 是動詞。",
+    "pronunciation": "/ɪmˈpaʊəmənt/",
+    "memory_tip_zh": "em- + power = 增權。",
+    "ethical_note_zh": "增權不是代決，而是支持服務使用者自行做決定。",
+    "hk_context_zh": "香港婦女增權和社區增權是重要工作範疇。",
+    "tags": [
+      "core",
+      "bachelor"
+    ]
+  },
+  {
+    "id": "sw_013",
+    "term_en": "person-centered",
+    "term_zh_hk": "以人為本",
+    "category": "介入取向",
+    "difficulty": 2,
+    "importance_exam": 4,
+    "definition_zh": "以服務使用者的需要、偏好和價值觀為核心的介入取向。",
+    "easy_example_en": "Person-centered care respects the clients preferences and values.",
+    "example_zh": "以人為本的照顧尊重服務使用者的偏好和價值觀。",
+    "common_collocations": [
+      "person-centered approach",
+      "person-centered planning"
+    ],
+    "related_terms": [
+      "self-determination",
+      "empowerment"
+    ],
+    "common_mistake": "說 people-centered，在社工語境通常用 person-centered。",
+    "wrong_example_en": "We provide people-centered service to elderly.",
+    "corrected_example_en": "We provide person-centered service to the elderly.",
+    "grammar_note_zh": "person-centered 是複合形容詞。",
+    "pronunciation": "/ˈpɜːsn ˈsentəd/",
+    "memory_tip_zh": "person = 個人，centered = 以...為中心。",
+    "ethical_note_zh": "以人為本要求社工放下自己的價值判斷。",
+    "hk_context_zh": "香港安老服務強調以人為本的照顧模式。",
+    "tags": [
+      "bachelor",
+      "theory"
+    ]
+  },
+  {
+    "id": "sw_014",
+    "term_en": "crisis intervention",
+    "term_zh_hk": "危機介入",
+    "category": "介入取向",
+    "difficulty": 2,
+    "importance_exam": 5,
+    "definition_zh": "在個人或家庭面對突發危機時，提供即時支援和穩定情況的介入方法。",
+    "easy_example_en": "Crisis intervention provides immediate support during emergencies.",
+    "example_zh": "危機介入在緊急情況下提供即時支援。",
+    "common_collocations": [
+      "provide crisis intervention"
+    ],
+    "related_terms": [
+      "risk assessment",
+      "intervention"
+    ],
+    "common_mistake": "說 crisis manage，正確是 crisis intervention。",
+    "wrong_example_en": "The hotline provide crisis manage for callers.",
+    "corrected_example_en": "The hotline provides crisis intervention for callers.",
+    "grammar_note_zh": "crisis intervention 是固定片語。",
+    "pronunciation": "/ˈkraɪsɪs ˌɪntəˈvenʃn/",
+    "memory_tip_zh": "crisis = 危機，intervention = 介入。",
+    "ethical_note_zh": "危機介入時安全評估是首要考慮。",
+    "hk_context_zh": "香港生命熱線和撒瑪利亞會提供危機介入服務。",
+    "tags": [
+      "core",
+      "bachelor",
+      "fieldwork"
+    ]
+  },
+  {
+    "id": "sw_015",
+    "term_en": "motivational interviewing",
+    "term_zh_hk": "動機式訪談",
+    "category": "介入取向",
+    "difficulty": 3,
+    "importance_exam": 3,
+    "definition_zh": "透過對話協助服務使用者發現和增強改變動機的介入技巧。",
+    "easy_example_en": "Motivational interviewing helps clients find their own reasons to change.",
+    "example_zh": "動機式訪談協助服務使用者找到自己改變的理由。",
+    "common_collocations": [
+      "use motivational interviewing",
+      "MI techniques"
+    ],
+    "related_terms": [
+      "empowerment",
+      "intervention"
+    ],
+    "common_mistake": "說 motivation interview，正確是 motivational interviewing。",
+    "wrong_example_en": "The worker use motivation interview with the youth.",
+    "corrected_example_en": "The worker uses motivational interviewing with the youth.",
+    "grammar_note_zh": "motivational 是形容詞，interviewing 是動名詞。",
+    "pronunciation": "/ˌməʊtɪˈveɪʃənl ˈɪntəvjuːɪŋ/",
+    "memory_tip_zh": "motivational = 動機的。",
+    "ethical_note_zh": "MI 強調以服務使用者為中心的溝通。",
+    "hk_context_zh": "香港戒煙和戒毒服務廣泛應用動機式訪談。",
+    "tags": [
+      "bachelor",
+      "theory"
+    ]
+  },
+  {
+    "id": "sw_016",
+    "term_en": "group work",
+    "term_zh_hk": "小組工作",
+    "category": "小組工作",
+    "difficulty": 1,
+    "importance_exam": 4,
+    "definition_zh": "透過小組形式協助成員達成共同目標的社工介入方法。",
+    "easy_example_en": "Group work helps members share experiences and support each other.",
+    "example_zh": "小組工作協助成員分享經驗和互相支持。",
+    "common_collocations": [
+      "conduct group work",
+      "group work session"
+    ],
+    "related_terms": [
+      "group dynamics",
+      "facilitation",
+      "therapeutic group"
+    ],
+    "common_mistake": "說 do group，正確是 conduct group work。",
+    "wrong_example_en": "I do group with the teenagers every week.",
+    "corrected_example_en": "I conduct group work with the teenagers every week.",
+    "grammar_note_zh": "group work 是固定專業術語。",
+    "pronunciation": "/ɡruːp wɜːk/",
+    "memory_tip_zh": "group = 小組，work = 工作。",
+    "ethical_note_zh": "小組工作須確保保密和自願參與。",
+    "hk_context_zh": "香港綜合家庭服務中心經常舉辦各類小組工作。",
+    "tags": [
+      "core",
+      "bachelor"
+    ]
+  },
+  {
+    "id": "sw_017",
+    "term_en": "group dynamics",
+    "term_zh_hk": "小組動力",
+    "category": "小組工作",
+    "difficulty": 3,
+    "importance_exam": 3,
+    "definition_zh": "小組內成員之間的互動模式、關係和影響力運作。",
+    "easy_example_en": "Understanding group dynamics helps the facilitator manage the session.",
+    "example_zh": "了解小組動力有助統籌者管理小組過程。",
+    "common_collocations": [
+      "understand group dynamics"
+    ],
+    "related_terms": [
+      "group work",
+      "facilitation",
+      "cohesion"
+    ],
+    "common_mistake": "說 group dynamic（少了 s），正確是 group dynamics。",
+    "wrong_example_en": "The facilitator observe the group dynamic carefully.",
+    "corrected_example_en": "The facilitator observed the group dynamics carefully.",
+    "grammar_note_zh": "dynamics 通常用複數形式。",
+    "pronunciation": "/ɡruːp daɪˈnæmɪks/",
+    "memory_tip_zh": "dynamics = 動力。",
+    "ethical_note_zh": "注意小組中的權力不平衡和排斥現象。",
+    "hk_context_zh": "社工帶領支援小組時需要觀察小組動力。",
+    "tags": [
+      "bachelor",
+      "theory"
+    ]
+  },
+  {
+    "id": "sw_018",
+    "term_en": "facilitation",
+    "term_zh_hk": "統籌",
+    "category": "小組工作",
+    "difficulty": 2,
+    "importance_exam": 3,
+    "definition_zh": "引導和促進小組討論和互動的過程，而非主導或教導。",
+    "easy_example_en": "Good facilitation creates a safe space for group members to share.",
+    "example_zh": "好的統籌為小組成員創造安全的分享空間。",
+    "common_collocations": [
+      "group facilitation",
+      "facilitation skills"
+    ],
+    "related_terms": [
+      "group work",
+      "group dynamics",
+      "cohesion"
+    ],
+    "common_mistake": "混淆 facilitate 和 lead。",
+    "wrong_example_en": "The worker lead the group discussion actively.",
+    "corrected_example_en": "The worker facilitated the group discussion effectively.",
+    "grammar_note_zh": "facilitate 是及物動詞，facilitation 是名詞。",
+    "pronunciation": "/fəˌsɪlɪˈteɪʃn/",
+    "memory_tip_zh": "facilitate = 使...容易。",
+    "ethical_note_zh": "統籌者應保持中立。",
+    "hk_context_zh": "香港社工培訓課程包含小組統籌技巧訓練。",
+    "tags": [
+      "bachelor"
+    ]
+  },
+  {
+    "id": "sw_019",
+    "term_en": "cohesion",
+    "term_zh_hk": "凝聚力",
+    "category": "小組工作",
+    "difficulty": 3,
+    "importance_exam": 3,
+    "definition_zh": "小組成員之間的連繫和歸屬感，是小組效能的重要指標。",
+    "easy_example_en": "Group cohesion increased after several sessions together.",
+    "example_zh": "經過幾次聚會後，小組凝聚力提升了。",
+    "common_collocations": [
+      "build group cohesion"
+    ],
+    "related_terms": [
+      "group dynamics",
+      "group work",
+      "therapeutic group"
+    ],
+    "common_mistake": "說 group sticky，正確是 group cohesion。",
+    "wrong_example_en": "The group has good sticky among members.",
+    "corrected_example_en": "The group has good cohesion among members.",
+    "grammar_note_zh": "cohesion 是不可數名詞。",
+    "pronunciation": "/kəʊˈhiːʒn/",
+    "memory_tip_zh": "cohesion = 凝聚力。",
+    "ethical_note_zh": "過高的凝聚力可能導致排斥新成員。",
+    "hk_context_zh": "治療性小組需要建立適當的凝聚力。",
+    "tags": [
+      "bachelor",
+      "theory"
+    ]
+  },
+  {
+    "id": "sw_020",
+    "term_en": "therapeutic group",
+    "term_zh_hk": "治療性小組",
+    "category": "小組工作",
+    "difficulty": 2,
+    "importance_exam": 4,
+    "definition_zh": "以治療和康復為目標，在專業引導下進行的小組。",
+    "easy_example_en": "The therapeutic group met weekly to support recovery.",
+    "example_zh": "治療性小組每週聚會以支援康復。",
+    "common_collocations": [
+      "run a therapeutic group"
+    ],
+    "related_terms": [
+      "group work",
+      "cohesion",
+      "facilitation"
+    ],
+    "common_mistake": "說 therapy group，在社工語境用 therapeutic group。",
+    "wrong_example_en": "She join a therapy group for depression.",
+    "corrected_example_en": "She joined a therapeutic group for depression.",
+    "grammar_note_zh": "therapeutic 是形容詞，修飾 group。",
+    "pronunciation": "/ˌθerəˈpjuːtɪk ɡruːp/",
+    "memory_tip_zh": "therapeutic = 治療的。",
+    "ethical_note_zh": "治療性小組須由受訓專業人員帶領。",
+    "hk_context_zh": "香港精神健康服務提供各類治療性小組。",
+    "tags": [
+      "bachelor",
+      "fieldwork"
+    ]
+  },
+  {
+    "id": "sw_021",
+    "term_en": "outreach",
+    "term_zh_hk": "外展",
+    "category": "社區工作",
+    "difficulty": 1,
+    "importance_exam": 4,
+    "definition_zh": "主動走到社區或街頭，接觸不易獲得服務的人士。",
+    "easy_example_en": "Outreach workers visit street sleepers to offer support.",
+    "example_zh": "外展工作者探訪露宿者以提供支援。",
+    "common_collocations": [
+      "community outreach",
+      "outreach programme"
+    ],
+    "related_terms": [
+      "community development",
+      "advocacy"
+    ],
+    "common_mistake": "說 reach out work，正確是 outreach work。",
+    "wrong_example_en": "We do reach out work in the community.",
+    "corrected_example_en": "We conduct outreach work in the community.",
+    "grammar_note_zh": "outreach 可作名詞或形容詞。",
+    "pronunciation": "/ˈaʊtriːtʃ/",
+    "memory_tip_zh": "out + reach = 外展。",
+    "ethical_note_zh": "外展工作須尊重服務對象的意願和私隱。",
+    "hk_context_zh": "香港青少年外展隊和露宿者外展服務是重要工作。",
+    "tags": [
+      "core",
+      "bachelor",
+      "fieldwork"
+    ]
+  },
+  {
+    "id": "sw_022",
+    "term_en": "community development",
+    "term_zh_hk": "社區發展",
+    "category": "社區工作",
+    "difficulty": 2,
+    "importance_exam": 4,
+    "definition_zh": "協助社區居民提升能力和資源，改善社區生活質素的過程。",
+    "easy_example_en": "Community development empowers residents to improve their neighbourhood.",
+    "example_zh": "社區發展增權居民改善社區環境。",
+    "common_collocations": [
+      "community development work"
+    ],
+    "related_terms": [
+      "capacity building",
+      "advocacy",
+      "outreach"
+    ],
+    "common_mistake": "說 develop community，正式用語是 community development。",
+    "wrong_example_en": "We develop community in the housing estate.",
+    "corrected_example_en": "We carry out community development in the housing estate.",
+    "grammar_note_zh": "community development 是固定名詞片語。",
+    "pronunciation": "/kəˈmjuːnəti dɪˈveləpmənt/",
+    "memory_tip_zh": "community = 社區，development = 發展。",
+    "ethical_note_zh": "社區發展強調居民參與和自決。",
+    "hk_context_zh": "香港屋邨社區發展計劃是常見服務模式。",
+    "tags": [
+      "bachelor"
+    ]
+  },
+  {
+    "id": "sw_023",
+    "term_en": "advocacy",
+    "term_zh_hk": "倡議",
+    "category": "社區工作",
+    "difficulty": 2,
+    "importance_exam": 4,
+    "definition_zh": "代表或協助弱勢社群爭取權益和資源的專業工作。",
+    "easy_example_en": "Advocacy helps vulnerable groups access their rights and resources.",
+    "example_zh": "倡議工作協助弱勢社群獲取權益和資源。",
+    "common_collocations": [
+      "social advocacy",
+      "advocacy work"
+    ],
+    "related_terms": [
+      "empowerment",
+      "community development"
+    ],
+    "common_mistake": "說 do advocate for，動詞是 advocate for。",
+    "wrong_example_en": "We do advocate for the disabled people.",
+    "corrected_example_en": "We advocate for the rights of disabled people.",
+    "grammar_note_zh": "advocate 是不及物動詞，後接 for + 對象。",
+    "pronunciation": "/ˈædvəkəsi/",
+    "memory_tip_zh": "advocacy = 倡議（名詞）。",
+    "ethical_note_zh": "倡議須以服務使用者的最佳利益為依歸。",
+    "hk_context_zh": "香港社工經常為少數族裔和弱勢社群倡議。",
+    "tags": [
+      "core",
+      "bachelor"
+    ]
+  },
+  {
+    "id": "sw_024",
+    "term_en": "needs assessment",
+    "term_zh_hk": "需要評估",
+    "category": "社區工作",
+    "difficulty": 2,
+    "importance_exam": 4,
+    "definition_zh": "識別和評估社區或服務使用者未獲滿足的需要的方法。",
+    "easy_example_en": "A needs assessment was conducted to plan the new service.",
+    "example_zh": "進行了需要評估以規劃新服務。",
+    "common_collocations": [
+      "conduct a needs assessment"
+    ],
+    "related_terms": [
+      "assessment",
+      "community development",
+      "service plan"
+    ],
+    "common_mistake": "說 need assessment（少了 s），正確是 needs assessment。",
+    "wrong_example_en": "We conduct need assessment in the district.",
+    "corrected_example_en": "We conduct a needs assessment in the district.",
+    "grammar_note_zh": "needs 用複數，表示各種需要。",
+    "pronunciation": "/niːdz əˈsesmənt/",
+    "memory_tip_zh": "needs = 需要（複數）。",
+    "ethical_note_zh": "需要評估應包含服務使用者的參與。",
+    "hk_context_zh": "香港社區中心開展新服務前須進行需要評估。",
+    "tags": [
+      "bachelor"
+    ]
+  },
+  {
+    "id": "sw_025",
+    "term_en": "capacity building",
+    "term_zh_hk": "能力建設",
+    "category": "社區工作",
+    "difficulty": 3,
+    "importance_exam": 3,
+    "definition_zh": "提升個人、組織或社區應對問題和發展的能力的過程。",
+    "easy_example_en": "Capacity building helps community groups become more independent.",
+    "example_zh": "能力建設協助社區團體變得更獨立。",
+    "common_collocations": [
+      "community capacity building"
+    ],
+    "related_terms": [
+      "community development",
+      "empowerment",
+      "advocacy"
+    ],
+    "common_mistake": "說 build capacity，名詞形式是 capacity building。",
+    "wrong_example_en": "We build capacity for the residents.",
+    "corrected_example_en": "We focus on capacity building for the residents.",
+    "grammar_note_zh": "capacity building 是固定名詞片語。",
+    "pronunciation": "/kəˈpæsəti ˈbɪldɪŋ/",
+    "memory_tip_zh": "capacity = 能力，building = 建設。",
+    "ethical_note_zh": "能力建設強調可持續發展。",
+    "hk_context_zh": "香港 NGO 經常為社區組織提供能力建設支援。",
+    "tags": [
+      "bachelor"
+    ]
+  },
+  {
+    "id": "sw_026",
+    "term_en": "genogram",
+    "term_zh_hk": "家系圖",
+    "category": "評估工具",
+    "difficulty": 2,
+    "importance_exam": 4,
+    "definition_zh": "以圖像方式展示家庭關係、結構和跨代模式的評估工具。",
+    "easy_example_en": "The social worker drew a genogram to understand the family relationships.",
+    "example_zh": "社工繪製家系圖以了解家庭關係。",
+    "common_collocations": [
+      "draw a genogram"
+    ],
+    "related_terms": [
+      "eco-map",
+      "assessment"
+    ],
+    "common_mistake": "說 family tree，在社工評估中用 genogram。",
+    "wrong_example_en": "I draw a family tree for the case.",
+    "corrected_example_en": "I drew a genogram for the case.",
+    "grammar_note_zh": "genogram 是可數名詞，draw a genogram。",
+    "pronunciation": "/ˈdʒenəɡræm/",
+    "memory_tip_zh": "gene = 世代，gram = 圖。",
+    "ethical_note_zh": "繪製家系圖前須解釋用途並取得同意。",
+    "hk_context_zh": "香港家庭社工常用家系圖作為評估工具。",
+    "tags": [
+      "bachelor",
+      "fieldwork"
+    ]
+  },
+  {
+    "id": "sw_027",
+    "term_en": "eco-map",
+    "term_zh_hk": "生態圖",
+    "category": "評估工具",
+    "difficulty": 3,
+    "importance_exam": 3,
+    "definition_zh": "展示個人與周圍環境和系統之間關係的視覺評估工具。",
+    "easy_example_en": "An eco-map shows the clients connections with community resources.",
+    "example_zh": "生態圖展示個案與社區資源的連繫。",
+    "common_collocations": [
+      "create an eco-map"
+    ],
+    "related_terms": [
+      "genogram",
+      "assessment"
+    ],
+    "common_mistake": "說 ecology map，正確是 eco-map。",
+    "wrong_example_en": "The worker create an ecology map for the client.",
+    "corrected_example_en": "The worker created an eco-map for the client.",
+    "grammar_note_zh": "eco-map 中間有連字號，是固定拼寫。",
+    "pronunciation": "/ˈiːkəʊ mæp/",
+    "memory_tip_zh": "eco = 生態，map = 圖。",
+    "ethical_note_zh": "生態圖協助識別個案的支援網絡和資源缺口。",
+    "hk_context_zh": "香港社工結合家系圖和生態圖進行綜合評估。",
+    "tags": [
+      "bachelor",
+      "theory"
+    ]
+  },
+  {
+    "id": "sw_028",
+    "term_en": "goal setting",
+    "term_zh_hk": "目標設定",
+    "category": "評估工具",
+    "difficulty": 1,
+    "importance_exam": 4,
+    "definition_zh": "與服務使用者共同制定具體、可達成的服務目標的過程。",
+    "easy_example_en": "Goal setting helps clients identify what they want to achieve.",
+    "example_zh": "目標設定協助服務使用者明確想要達成的事。",
+    "common_collocations": [
+      "SMART goal setting"
+    ],
+    "related_terms": [
+      "service plan",
+      "assessment",
+      "evaluation"
+    ],
+    "common_mistake": "說 set goal，正式用語是 goal setting。",
+    "wrong_example_en": "We set goal with the client at the first meeting.",
+    "corrected_example_en": "We worked on goal setting with the client at the first meeting.",
+    "grammar_note_zh": "goal setting 是動名詞片語。",
+    "pronunciation": "/ɡəʊl ˈsetɪŋ/",
+    "memory_tip_zh": "goal = 目標，setting = 設定。",
+    "ethical_note_zh": "目標應由服務使用者參與制定。",
+    "hk_context_zh": "香港個案工作強調與服務使用者共同設定 SMART 目標。",
+    "tags": [
+      "core",
+      "bachelor"
+    ]
+  },
+  {
+    "id": "sw_029",
+    "term_en": "service plan",
+    "term_zh_hk": "服務計劃",
+    "category": "評估工具",
+    "difficulty": 2,
+    "importance_exam": 5,
+    "definition_zh": "列明服務目標、策略和時間表的書面計劃文件。",
+    "easy_example_en": "The service plan outlines the goals and actions for the client.",
+    "example_zh": "服務計劃列明個案的目標和行動方案。",
+    "common_collocations": [
+      "develop a service plan"
+    ],
+    "related_terms": [
+      "goal setting",
+      "case management",
+      "evaluation"
+    ],
+    "common_mistake": "說 make service planning，正確是 develop a service plan。",
+    "wrong_example_en": "We make service planning for the new case.",
+    "corrected_example_en": "We developed a service plan for the new case.",
+    "grammar_note_zh": "develop a service plan 是固定搭配。",
+    "pronunciation": "/ˈsɜːvɪs plæn/",
+    "memory_tip_zh": "service = 服務，plan = 計劃。",
+    "ethical_note_zh": "服務計劃須定期檢討和更新。",
+    "hk_context_zh": "香港受資助機構要求為個案制定服務計劃。",
+    "tags": [
+      "core",
+      "bachelor",
+      "fieldwork"
+    ]
+  },
+  {
+    "id": "sw_030",
+    "term_en": "evaluation",
+    "term_zh_hk": "評估/檢討",
+    "category": "評估工具",
+    "difficulty": 2,
+    "importance_exam": 4,
+    "definition_zh": "檢視服務成效和目標達成程度的系統性過程。",
+    "easy_example_en": "Evaluation helps the team review whether the service goals were met.",
+    "example_zh": "評估協助團隊檢討服務目標是否達成。",
+    "common_collocations": [
+      "service evaluation",
+      "outcome evaluation"
+    ],
+    "related_terms": [
+      "service plan",
+      "goal setting",
+      "assessment"
+    ],
+    "common_mistake": "混淆 assessment（開案評估）和 evaluation（成效檢討）。",
+    "wrong_example_en": "We do assessment after the service ends to check results.",
+    "corrected_example_en": "We conduct an evaluation after the service ends to check results.",
+    "grammar_note_zh": "assessment 用於開案，evaluation 用於結束或過程檢討。",
+    "pronunciation": "/ɪˌvæljuˈeɪʃn/",
+    "memory_tip_zh": "evaluate = 評估/檢討。",
+    "ethical_note_zh": "評估結果應反饋到服務改善。",
+    "hk_context_zh": "香港社會服務機構須定期進行服務成效評估。",
+    "tags": [
+      "core",
+      "bachelor"
+    ]
+  }
+]
